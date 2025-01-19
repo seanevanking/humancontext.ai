@@ -1,0 +1,191 @@
+// Contact Page Styles
+.main.contact {
+    padding: 8rem 0 6rem 0;
+    background-color: #f5f5f5;
+    
+
+    // Header Styles
+    > header.major {
+        text-align: center;
+        max-width: 45rem;
+        margin: 0 auto 3rem;
+        padding: 0 2rem;
+
+        &:before {
+            content: '';
+            display: inline-block;
+            width: 6.5rem;
+            height: 0.25rem;
+            margin: 0 0 1.5rem 0;
+            border-radius: 4px;
+            background-color: #4a98e2;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: #3f3f3f;
+        }
+
+        p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            color: #666;
+        }
+    }
+
+    // Main Content Area
+    .inner {
+        max-width: 75rem;
+        margin: 0 auto;
+        padding: 0 2rem;
+    }
+
+    // Contact Grid Layout
+    .contact-grid {
+        display: grid;
+        grid-template-columns: 1fr 1.5fr;
+        gap: 4rem;
+        align-items: start;
+
+        @media screen and (max-width: 980px) {
+            grid-template-columns: 1fr;
+            gap: 3rem;
+        }
+    }
+
+    // Contact Info Section
+    .contact-info {
+        background: #ffffff;
+        padding: 3rem;
+        border-radius: 4px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+        header {
+            margin-bottom: 2.5rem;
+
+            h2 {
+                font-size: 2rem;
+                margin-bottom: 1rem;
+                color: #3f3f3f;
+            }
+
+            p {
+                font-size: 1.1rem;
+                color: #666;
+            }
+        }
+    }
+
+    // Contact Methods
+    .contact-methods {
+        .contact-method {
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid rgba(143, 143, 143, 0.2);
+
+            &:last-child {
+                margin-bottom: 0;
+                padding-bottom: 0;
+                border-bottom: none;
+            }
+
+            i {
+                font-size: 1.5rem;
+                color: #4a98e2;
+                margin-bottom: 1rem;
+            }
+
+            h3 {
+                font-size: 1.2rem;
+                margin: 0.5rem 0;
+                color: #3f3f3f;
+            }
+
+            p, a {
+                font-size: 1.1rem;
+                color: #666;
+                margin: 0;
+                text-decoration: none;
+                transition: color 0.2s ease;
+
+                &:hover {
+                    color: #4a98e2;
+                }
+            }
+        }
+    }
+
+    // Calendly Section
+    .consultation-calendar {
+        background: #ffffff;
+        padding: 3rem;
+        border-radius: 4px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+        header {
+            margin-bottom: 2rem;
+
+            h2 {
+                font-size: 2rem;
+                margin-bottom: 1rem;
+                color: #3f3f3f;
+            }
+
+            p {
+                font-size: 1.1rem;
+                color: #666;
+            }
+        }
+
+        .calendly-inline-widget {
+            min-width: 320px;
+            height: 700px;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+    }
+
+    // Responsive Adjustments
+    @media screen and (max-width: 736px) {
+        padding: 4rem 0;
+
+        > header.major {
+            padding: 0 1.5rem;
+
+            h1 {
+                font-size: 2rem;
+            }
+        }
+
+        .inner {
+            padding: 0 1.5rem;
+        }
+
+        .contact-info,
+        .consultation-calendar {
+            padding: 2rem;
+        }
+
+        .calendly-inline-widget {
+            height: 600px;
+        }
+    }
+
+    @media screen and (max-width: 480px) {
+        .contact-methods {
+            .contact-method {
+                margin-bottom: 1.5rem;
+                padding-bottom: 1.5rem;
+
+                h3 {
+                    font-size: 1.1rem;
+                }
+
+                p, a {
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+}
