@@ -1,0 +1,73 @@
+/* Journey Steps */
+.journey-steps {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: _size(element-margin);
+    padding: _size(element-margin) 0;
+
+    @include breakpoint('>=xlarge') {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    @include breakpoint('<=small') {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Journey Step */
+.journey-step,
+article.journey-step {
+    text-align: left;
+    padding: _size(element-margin);
+    background: _palette(bg);
+    border-radius: _size(border-radius);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+
+    &:hover {
+        transform: translateY(-5px);
+    }
+
+    /* Step Icon */
+    .step-icon {
+        width: 250px;
+        height: 250px;
+        margin: 0 auto _size(element-margin);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    }
+
+    /* Heading */
+    h3 {
+        font-size: 1.35rem;
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+
+
+    /* Feature List */
+    ul.feature-list,
+    .feature-list {
+        list-style: none;
+        padding: 0;
+        margin: _size(element-margin) 0;
+        text-align: left;
+
+        li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid _palette(border);
+
+            &:last-child {
+                border-bottom: none;
+            }
+        }
+    }
+
+}

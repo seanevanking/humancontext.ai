@@ -1,0 +1,192 @@
+///
+/// Relativity by Pixelarity
+/// pixelarity.com | hello@pixelarity.com
+/// License: pixelarity.com/license
+///
+
+/* Footer */
+
+#footer {
+    padding: 4rem 2rem;
+    
+    .footer-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        max-width: 58rem;
+        margin: 0 auto;
+        gap: 2rem;
+
+        // Brand section
+        .brand {
+            text-align: left;
+            
+            img {
+                max-width: 100px;
+                height: auto;
+              
+            }
+            
+            .company-name {
+                display: block;
+              
+            }
+        }
+
+        // Contact info section
+        .contact-info {
+            text-align: center;
+            
+            h3 {
+                margin-bottom: 2rem;
+                margin-top: 2rem;
+            }
+            
+            .contact-details {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                
+                li {
+                    margin: 1rem 0;
+                    
+                    a {
+                        display: inline-flex;
+                        align-items: center;
+                        gap: 0.5rem;
+                        text-decoration: none;
+                        
+                        i {
+                            width: 1em;
+                            text-align: center;
+                        }
+                    }
+                }
+            }
+
+            .button {
+                margin-top: 2rem;
+            }
+        }
+
+        // Social links section
+        .social-links {
+            text-align: right;
+            
+            h3 {
+                margin-bottom: 2rem;
+                margin-top: 2rem;
+            }
+            
+            .icons {
+                display: flex;
+                justify-content: center;
+                gap: 1.5rem;
+                
+                a {
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+
+    .footer-bottom {
+        margin-top: 4rem;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        
+        p {
+            margin: 0;
+            width: calc(33.333% - 1.33rem);
+          
+        }
+    }
+
+    // Medium breakpoint
+    @include breakpoint('<=medium') {
+        .footer-content {
+            flex-direction: column;  // Stack vertically
+            align-items: center;     // Center align items
+            text-align: center;      // Center text
+        }
+
+        .social-links .icons {
+            justify-content: center;
+        }
+    }
+
+    // Small breakpoint
+    @include breakpoint('<=small') {
+        padding: 2rem 1rem;
+        
+        .footer-content {
+            gap: 2rem;
+        }
+        
+        .footer-bottom {
+            margin-top: 2rem;
+        }
+    }
+
+    footer#footer {
+        padding: 3.5rem 0 1.5rem 0;
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 2rem;
+            max-width: 66rem;
+            margin: 0 auto;
+            padding: 0 2rem;
+
+            .brand {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+
+                img {
+                    height: 3.5rem;
+                    width: auto;
+                }
+            }
+        }
+    }
+
+    // Media queries for responsiveness
+    @media screen and (max-width: 980px) {
+        footer#footer .footer-content {
+            grid-template-columns: 1fr;
+            text-align: center;
+        }
+
+        footer#footer .footer-content .brand,
+        footer#footer .footer-content .contact-info,
+        footer#footer .footer-content .social-links {
+            align-items: center;
+        }
+
+        footer#footer .footer-content .brand {
+            margin-bottom: 2rem;
+        }
+
+        .footer-bottom p {
+             width: 33%; 
+        }
+    }
+
+    @media screen and (max-width: 480px) {
+        footer#footer {
+            padding: 2rem 1rem;
+        }
+
+        footer#footer .footer-content {
+            gap: 1.5rem;
+        }
+
+        footer#footer .footer-content .brand img {
+            height: 3rem;
+        }
+    }
+}

@@ -1,0 +1,187 @@
+// _approach.scss
+// Extends the main styles for the approach page
+
+.approach {
+    padding: 4rem 0;
+    background-color: #f5f5f5;
+
+    // Header styling
+    > header.major {
+        text-align: center;
+        max-width: 66rem;
+        margin: 0 auto 3rem;
+        padding: 0 2rem;
+
+        &:before {
+            content: '';
+            display: inline-block;
+            width: 6.5rem;
+            height: 0.25rem;
+            margin: 0 0 1.5rem 0;
+            border-radius: 4px;
+            background-color: #4a98e2;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+    }
+
+    // Main content container
+    .inner {
+        max-width: 66rem;
+        margin: 0 auto;
+        padding: 0 2rem;
+    }
+
+    // Context Layer section
+    #context-layer {
+        article.post.style2 {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            background: #ffffff;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 4rem;
+            overflow: hidden;
+
+            .content {
+                padding: 3rem;
+                width: 50%;
+
+                header {
+                    margin-bottom: 2rem;
+                }
+
+                .feature-list {
+                    list-style: none;
+                    padding: 0;
+                    margin: 2rem 0;
+
+                    li {
+                        position: relative;
+                        padding-left: 1.5rem;
+                        margin-bottom: 0.75rem;
+
+                        &:before {
+                            content: '→';
+                            position: absolute;
+                            left: 0;
+                            color: #4a98e2;
+                        }
+                    }
+                }
+            }
+
+            .image {
+                width: 50%;
+                padding: 2rem;
+            }
+        }
+    }
+
+    // Process section
+    .process-section {
+        padding: 4rem 0;
+
+        header.major {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 2rem;
+
+            .step {
+                background: #ffffff;
+                padding: 2rem;
+                border-radius: 8px;
+                text-align: center;
+                transition: transform 0.2s ease;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+                &:hover {
+                    transform: translateY(-4px);
+                    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+                }
+
+                .step-number {
+                    color: #4a98e2;
+                    font-size: 2rem;
+                    font-weight: 700;
+                    margin-bottom: 1rem;
+                }
+
+                h3 {
+                    color: #333;
+                    font-size: 1.25rem;
+                    margin-bottom: 1rem;
+                }
+
+                p {
+                    color: #666;
+                    font-size: 0.9rem;
+                    line-height: 1.6;
+                    margin: 0;
+                }
+            }
+        }
+    }
+}
+
+// Responsive adjustments
+@media screen and (max-width: 980px) {
+    .approach {
+        .inner {
+            padding: 0 1.5rem;
+        }
+
+        #context-layer {
+            article.post.style2 {
+                flex-direction: column;
+
+                .content,
+                .image {
+                    width: 100%;
+                    padding: 2rem;
+                }
+            }
+        }
+
+        .process-section {
+            .process-steps {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 736px) {
+    .approach {
+        padding: 3rem 0;
+
+        > header.major {
+            padding: 0 1.5rem;
+
+            h1 {
+                font-size: 2rem;
+            }
+        }
+
+        .process-section {
+            .process-steps {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+    }
+}

@@ -1,0 +1,58 @@
+// Context layer section updates 
+#context-layer {
+    article.post {
+      &.style2 {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 2rem;
+        
+        .content {
+          padding: 5rem 4rem;
+          width: 60%;
+  
+          header {
+            margin-bottom: 2rem;
+          }
+        }
+  
+        .image {
+          flex: 1;
+          position: relative;
+          min-height: inherit;
+        }
+
+        // Add medium breakpoint for tablet/smaller desktop
+        @include breakpoint('<=medium') {
+            flex-direction: column;
+            padding: 2rem;
+            
+            .content {
+                width: 100%;
+                padding: 2rem 1rem;
+                order: 1;  // Move content above image
+                
+                header {
+                    text-align: center;
+                }
+            }
+            
+            .image {
+                width: 100%;
+                max-width: 500px;
+                margin: 0 auto;
+                order: 2;  // Move image below content
+            }
+        }
+
+        // Existing small breakpoint styles
+        @include breakpoint('<=small') {
+            padding: 1rem;
+            
+            .content {
+                padding: 1rem;
+            }
+        }
+      }
+    }
+  }

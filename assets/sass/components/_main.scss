@@ -1,0 +1,409 @@
+/* Main */
+#wrapper > .main {
+    @include padding(8rem, 0);
+
+    > header {
+        width: 100%;
+        max-width: 35rem;
+        text-align: center;
+        margin: 0 auto (_size(element-margin) * 1.5) auto;
+
+        &:before {
+            content: '';
+            display: inline-block;
+            width: 6.5rem;
+            height: 0.25rem;
+            margin: 0 0 1.5rem 0;
+            border-radius: _size(border-radius);
+            background-color: _palette(accent1, bg);
+        }
+    }
+
+    > .inner {
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        max-width: 58rem;
+
+        &.narrow {
+            max-width: 48rem;
+        }
+
+        &.style2 {
+            @include padding(5rem, 4rem);
+            background-color: _palette(bg);
+            border-radius: _size(border-radius);
+
+            > .image.main:first-child {
+                position: relative;
+                top: -5rem;
+                left: -4rem;
+                width: calc(100% + 8rem);
+                height: 25rem;
+                margin-bottom: 0;
+                border-radius: _size(border-radius) _size(border-radius) 0 0;
+
+                img {
+                    border-radius: _size(border-radius) _size(border-radius) 0 0;
+                }
+            }
+        }
+    }
+
+    &.special {
+        text-align: center;
+    }
+
+    &.accent1 {
+        @include color(accent1);
+    }
+
+    &.accent2 {
+        @include color(accent2);
+        color: #ffffff;
+        padding: 8rem 0 6rem 0;
+        background-color: #3f3f3f;
+    
+        .inner {
+            max-width: 75rem;
+            margin: 0 auto; 
+            padding: 0 2rem;
+    
+            article.post {
+                display: flex;
+                align-items: center;
+                margin: 0 0 3.5rem 0;
+                min-height: 28rem;
+                background: transparent;
+    
+                &.alt {
+                    flex-direction: row-reverse;
+    
+                    .content {
+                        padding: 5rem 0 5rem 4rem;
+                    }
+                }
+    
+                .content {
+                    width: 50%;
+                    padding: 5rem 4rem; 
+    
+                    header {
+                        .category {
+                            color: #4a98e2;
+                        }
+                    }
+    
+                    h3, p {
+                        color: #ffffff;
+                    }
+                }
+    
+                .image {
+                    width: 50%;
+                    min-height: inherit;
+                    
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        border-radius: 4px;
+                    }
+                }
+    
+                @include breakpoint('<=medium') {
+                    flex-direction: column;
+                    min-height: 0;
+    
+                    &.alt {
+                        flex-direction: column;
+    
+                        .content {
+                            padding: 3rem 2rem;
+                        }
+                    }
+    
+                    .content,
+                    .image {
+                        width: 100%;
+                        padding: 3rem 2rem;
+                    }
+                }
+            }
+        }
+    }
+
+    &.alt {
+        background-image: url('../../images/bg.jpg');
+        background-size: cover;
+        background-repeat: repeat;
+        background-attachment: fixed;
+    }
+
+    @include breakpoint('<=large') {
+        @include padding(6rem, 3rem);
+
+        > .inner {
+            &.style2 {
+                > .image.main:first-child {
+                    height: 20rem;
+                }
+            }
+        }
+
+        &.alt {
+            background-attachment: scroll;
+        }
+    }
+
+    @include breakpoint('<=medium') {
+        > .inner {
+            &.style2 {
+                @include padding(4rem, 3rem);
+
+                > .image.main:first-child {
+                    top: -4rem;
+                    left: -3rem;
+                    width: calc(100% + 6rem);
+                    height: 25rem;
+                }
+            }
+        }
+    }
+
+    @include breakpoint('<=small') {
+        @include padding(4rem, 2rem);
+
+        > .inner {
+            &.style2 {
+                @include padding(2.5rem, 2rem);
+
+                > .image.main:first-child {
+                    top: -2.5rem;
+                    left: -2rem;
+                    width: calc(100% + 4rem);
+                    height: 18rem;
+                }
+            }
+        }
+    }
+
+    @include breakpoint('<=xsmall') {
+        > .inner {
+            &.style2 {
+                > .image.main:first-child {
+                    height: 14rem;
+                }
+            }
+        }
+    }
+
+    @include breakpoint('<=xxsmall') {
+        @include padding(3rem, 1rem);
+    }
+}
+
+// New semantic structure styles
+main#main {
+    display: block;
+    width: 100%;
+    position: relative;  
+    top: 0;             
+    left: 0;
+    padding: clamp(2rem, 4vw, 8rem) 0;      
+
+    section.main {
+        padding: 8rem 0 6rem 0;
+        
+        > header {
+            width: 100%;
+            max-width: 66rem;
+            text-align: center;
+            margin: 0 auto 3rem auto;
+
+            &:before {
+                content: '';
+                display: inline-block;
+                width: 6.5rem;
+                height: 0.25rem;
+                margin: 0 0 1.5rem 0;
+                border-radius: 0.25rem;
+                background-color: _palette(accent1, bg);
+            }
+
+            h2 {
+                color: inherit;
+                margin-bottom: 1rem;
+            }
+
+            p {
+                color: inherit;
+            }
+        }
+
+        &.alt {
+            background-color: #f5f5f5;
+        }
+
+        &.accent2 {
+            background-color: #3f3f3f;
+            color: #ffffff;
+            
+            > header {
+                h2, p {
+                    color: #ffffff;
+                }
+
+                &:before {
+                    background-color: _palette(accent2, bg);
+                }
+            }
+
+            .inner {
+                max-width: 75rem;
+                margin: 0 auto;
+                padding: 0 2rem;
+
+                article.post {
+                    display: flex;
+                    align-items: center;
+                    margin: 0 0 3.5rem 0;
+                    min-height: 28rem;
+
+                    &.alt {
+                        flex-direction: row-reverse;
+
+                        .content {
+                            padding: 5rem 0 5rem 4rem;
+                        }
+                    }
+
+                    .content {
+                        width: 50%;
+                        padding: 5rem 4rem;
+
+                        header {
+                            .category {
+                                color: #4a98e2;
+                            }
+                        }
+
+                        h3, p {
+                            color: #ffffff;
+                        }
+                    }
+
+                    .image {
+                        width: 50%;
+                        min-height: inherit;
+                        
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                            border-radius: 4px;
+                        }
+                    }
+
+                    @media screen and (max-width: 980px) {
+                        flex-direction: column;
+                        margin-bottom: 2rem; 
+
+                        &.alt {
+                            flex-direction: column;
+                        }
+
+                        .content {
+                            width: 100%;
+                            padding: clamp(1.5rem, 3vw, 3rem);  // Responsive padding
+                        }
+
+                        .image {
+                            width: 100%;
+                            padding: clamp(1rem, 2vw, 2rem);  // Responsive padding
+                            
+                            img {
+                                max-height: 300px;  // Prevent images from being too tall on mobile
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    section.main.why-context {
+        background-color: #f5f5f5;
+        padding: 4rem 0;
+
+        > header {
+            text-align: center;
+            max-width: 45rem;
+            margin: 0 auto 3rem;
+            padding: 0 2rem;
+
+            &:before {
+                content: "";
+                display: inline-block;
+                width: 6.5rem;
+                height: 0.25rem;
+                margin: 0 0 1.5rem 0;
+                border-radius: 4px;
+                background-color: _palette(accent1, bg);
+            }
+
+            h1 {
+                font-size: 2.5rem;
+                margin-bottom: 1.5rem;
+            }
+
+            p {
+                font-size: 1.2rem;
+                line-height: 1.6;
+            }
+        }
+
+        .inner {
+            background-color: #ffffff;
+            border-radius: 4px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            padding: 5rem 4rem 3rem 4rem;
+            max-width: 58rem;
+            margin: 0 auto;
+
+            > .image.main:first-child {
+                position: relative;
+                top: -5rem;
+                left: -4rem;
+                width: calc(100% + 8rem);
+                height: 25rem;
+                margin-bottom: 0;
+                border-radius: 4px 4px 0 0;
+
+                img {
+                    border-radius: 4px 4px 0 0;
+                }
+            }
+        }
+    }
+}
+
+@include breakpoint('<=medium') {
+    section.main.why-context {
+        .inner {
+            article.post.style2 {
+                flex-direction: column;
+                gap: 2rem;
+                
+                .content, .image {
+                    width: 100%;
+                    padding: 0 1rem;
+                }
+                
+                &.alt {
+                    flex-direction: column;
+                }
+            }
+        }
+    }
+}
