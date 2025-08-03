@@ -81,10 +81,10 @@ class App {
   // Intersection Observer for animations and header transparency
   setupIntersectionObserver() {
     const header = document.querySelector('.header');
-    const hero = document.querySelector('.hero');
+    const banner = document.querySelector('#banner');
 
     // Header transparency on hero section
-    if (header && hero) {
+    if (header && banner) {
       const observer = new IntersectionObserver(
         (entries) => {
           entries.forEach(entry => {
@@ -93,7 +93,7 @@ class App {
         },
         { threshold: 0.1 }
       );
-      observer.observe(hero);
+      observer.observe(banner);
     }
 
     // Animate elements on scroll
