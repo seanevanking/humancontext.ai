@@ -1,0 +1,93 @@
+// Animation utilities
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(2rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-2rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideRight {
+  from {
+    opacity: 0;
+    transform: translateX(2rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+// Animation classes
+[data-animate] {
+  opacity: 0;
+  transition: all 0.6s ease-out;
+  
+  &.animate-in {
+    opacity: 1;
+  }
+}
+
+[data-animate="fade-up"] {
+  transform: translateY(2rem);
+  
+  &.animate-in {
+    transform: translateY(0);
+  }
+}
+
+[data-animate="slide-left"] {
+  transform: translateX(-2rem);
+  
+  &.animate-in {
+    transform: translateX(0);
+  }
+}
+
+[data-animate="slide-right"] {
+  transform: translateX(2rem);
+  
+  &.animate-in {
+    transform: translateX(0);
+  }
+}
+
+// Staggered animations
+[data-animate-delay="100"] {
+  transition-delay: 0.1s;
+}
+
+[data-animate-delay="200"] {
+  transition-delay: 0.2s;
+}
+
+[data-animate-delay="300"] {
+  transition-delay: 0.3s;
+}
+
+[data-animate-delay="400"] {
+  transition-delay: 0.4s;
+}
+
+// Reduced motion support
+@media (prefers-reduced-motion: reduce) {
+  [data-animate] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

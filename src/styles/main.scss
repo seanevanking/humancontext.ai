@@ -1,0 +1,18 @@
+// Main stylesheet - Modern SCSS architecture
+@import 'abstracts/variables';
+@import 'abstracts/mixins';
+
+@import 'base/reset';
+@import 'base/typography';
+
+@import 'components/header';
+@import 'components/button';
+@import 'components/card';
+@import 'components/hero';
+@import 'components/section';
+@import 'components/journey';
+@import 'components/footer';
+
+@import 'utilities/animations';
+@import 'utilities/spacing';
+@import 'utilities/layout';

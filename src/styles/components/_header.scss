@@ -1,0 +1,196 @@
+// Modern header component
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: var(--z-fixed);
+  background-color: var(--color-background);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-normal);
+  
+  &__container {
+    @include container;
+    @include flex-between;
+    min-height: 4rem;
+    padding-top: var(--space-sm);
+    padding-bottom: var(--space-sm);
+  }
+  
+  &__logo {
+    @include flex-center;
+    gap: var(--space-sm);
+    text-decoration: none;
+    color: var(--color-text);
+    font-weight: var(--font-weight-semibold);
+    
+    img {
+      height: 2rem;
+      width: auto;
+    }
+    
+    &:hover {
+      color: var(--color-primary);
+    }
+  }
+  
+  &__nav {
+    @include respond-below('lg') {
+      display: none;
+    }
+  }
+  
+  &__menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: var(--space-lg);
+  }
+  
+  &__menu-item {
+    position: relative;
+  }
+  
+  &__menu-link {
+    display: block;
+    padding: var(--space-xs) var(--space-sm);
+    text-decoration: none;
+    color: var(--color-text);
+    font-weight: var(--font-weight-medium);
+    transition: color var(--transition-fast);
+    border-radius: var(--border-radius);
+    
+    &:hover,
+    &:focus-visible {
+      color: var(--color-primary);
+      background-color: rgba(74, 152, 226, 0.1);
+    }
+    
+    &--active {
+      color: var(--color-primary);
+      position: relative;
+      
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -0.5rem;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 2rem;
+        height: 2px;
+        background-color: var(--color-primary);
+        border-radius: 1px;
+      }
+    }
+  }
+  
+  &__mobile-toggle {
+    @include button-reset;
+    @include flex-center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: var(--border-radius);
+    background-color: transparent;
+    transition: background-color var(--transition-fast);
+    
+    @include respond-to('lg') {
+      display: none;
+    }
+    
+    &:hover {
+      background-color: var(--color-background-alt);
+    }
+    
+    svg {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+  }
+  
+  // Transparent variant for hero sections
+  &--transparent {
+    background-color: transparent;
+    box-shadow: none;
+    
+    .header__logo,
+    .header__menu-link {
+      color: white;
+      
+      &:hover {
+        color: var(--color-primary);
+      }
+    }
+  }
+}
+
+// Mobile menu
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: var(--z-modal);
+  background-color: var(--color-background);
+  transform: translateX(100%);
+  transition: transform var(--transition-normal);
+  
+  &--open {
+    transform: translateX(0);
+  }
+  
+  &__header {
+    @include flex-between;
+    padding: var(--space-lg);
+    border-bottom: 1px solid var(--color-border);
+  }
+  
+  &__close {
+    @include button-reset;
+    @include flex-center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: var(--border-radius);
+    
+    svg {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+  }
+  
+  &__nav {
+    padding: var(--space-lg);
+  }
+  
+  &__menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  &__menu-item {
+    margin-bottom: var(--space-sm);
+  }
+  
+  &__menu-link {
+    display: block;
+    padding: var(--space-md);
+    text-decoration: none;
+    color: var(--color-text);
+    font-weight: var(--font-weight-medium);
+    border-radius: var(--border-radius);
+    transition: background-color var(--transition-fast);
+    
+    &:hover,
+    &:focus-visible {
+      background-color: var(--color-background-alt);
+      color: var(--color-primary);
+    }
+    
+    &--active {
+      background-color: rgba(74, 152, 226, 0.1);
+      color: var(--color-primary);
+    }
+  }
+}
