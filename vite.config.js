@@ -1,23 +1,24 @@
 import { defineConfig } from 'vite'
 
 export default defineConfig({
+  root: 'src',
   build: {
-    outDir: 'dist',
+    outDir: '../dist',
     emptyOutDir: true,
     rollupOptions: {
       input: {
-        main: 'src/index.html',
-        about: 'src/about.html',
-        solutions: 'src/solutions.html',
-        'context-engineering': 'src/context-engineering.html',
-        contact: 'src/contact.html'
+        main: 'index.html',
+        about: 'about.html',
+        solutions: 'solutions.html',
+        'context-engineering': 'context-engineering.html',
+        contact: 'contact.html'
       }
     }
   },
   css: {
     preprocessorOptions: {
       scss: {
-        additionalData: `@import "./src/styles/abstracts/variables"; @import "./src/styles/abstracts/mixins";`
+        additionalData: `@import "./styles/abstracts/variables"; @import "./styles/abstracts/mixins";`
       }
     }
   }
