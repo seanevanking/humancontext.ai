@@ -1,0 +1,118 @@
+// Modern form component
+.form {
+  &__group {
+    margin-bottom: var(--space-lg);
+  }
+  
+  &__label {
+    display: block;
+    font-weight: var(--font-weight-medium);
+    margin-bottom: var(--space-xs);
+    color: var(--color-text);
+  }
+  
+  &__field {
+    width: 100%;
+    padding: var(--space-sm) var(--space-md);
+    border: 2px solid var(--color-border);
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    transition: all var(--transition-fast);
+    background-color: var(--color-background);
+    
+    &:focus {
+      outline: none;
+      border-color: var(--color-primary);
+      box-shadow: 0 0 0 3px rgba(74, 152, 226, 0.1);
+    }
+    
+    &--error {
+      border-color: #dc2626;
+      
+      &:focus {
+        border-color: #dc2626;
+        box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+      }
+    }
+    
+    &::placeholder {
+      color: var(--color-text-muted);
+    }
+  }
+  
+  &__error {
+    color: #dc2626;
+    font-size: 0.875rem;
+    margin-top: var(--space-xs);
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    
+    &::before {
+      content: '⚠';
+      font-size: 1rem;
+    }
+  }
+  
+  &__help {
+    color: var(--color-text-muted);
+    font-size: 0.875rem;
+    margin-top: var(--space-xs);
+  }
+  
+  // Grid layout for form fields
+  &__grid {
+    display: grid;
+    gap: var(--space-lg);
+    
+    &--2-col {
+      @include respond-to('md') {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    &--3-col {
+      @include respond-to('lg') {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+  }
+}
+
+// Textarea specific styles
+textarea.form__field {
+  min-height: 8rem;
+  resize: vertical;
+}
+
+// Select specific styles
+select.form__field {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+  background-position: right var(--space-sm) center;
+  background-repeat: no-repeat;
+  background-size: 1.5rem;
+  padding-right: var(--space-xl);
+  cursor: pointer;
+}
+
+// Checkbox and radio styles
+.form__checkbox,
+.form__radio {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  
+  input {
+    margin: 0;
+    width: 1.25rem;
+    height: 1.25rem;
+    flex-shrink: 0;
+    cursor: pointer;
+  }
+  
+  label {
+    margin: 0;
+    cursor: pointer;
+    line-height: 1.5;
+  }
+}

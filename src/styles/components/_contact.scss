@@ -1,0 +1,48 @@
+// Contact page specific styles
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-xl);
+  
+  @include respond-to('lg') {
+    grid-template-columns: 1fr 1.5fr;
+    gap: var(--space-2xl);
+  }
+}
+
+.contact-methods {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+.contact-method {
+  text-align: center;
+  
+  @include respond-to('md') {
+    text-align: left;
+  }
+  
+  h3 {
+    font-size: 1.25rem;
+    margin: var(--space-sm) 0;
+    color: var(--color-text);
+  }
+  
+  p, a {
+    color: var(--color-text-light);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+    
+    &:hover {
+      color: var(--color-primary);
+    }
+  }
+}
+
+// Calendly widget container
+.calendly-inline-widget {
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
