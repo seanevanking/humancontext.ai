@@ -1,9 +1,8 @@
 import { defineConfig } from 'vite'
 
 export default defineConfig({
-  root: 'src',
   build: {
-    outDir: '../dist',
+    outDir: 'dist',
     emptyOutDir: true,
     rollupOptions: {
       input: {
@@ -12,13 +11,6 @@ export default defineConfig({
         solutions: 'solutions.html',
         'context-engineering': 'context-engineering.html',
         contact: 'contact.html'
-      }
-    }
-  },
-  css: {
-    preprocessorOptions: {
-      scss: {
-        additionalData: `@import "abstracts/variables"; @import "abstracts/mixins";`
       }
     }
   }
